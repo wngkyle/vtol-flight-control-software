@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2023-04-10T02:20:22Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.6.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "V1"
+        },
+        "Owner": "Wei-Kai Wang <ww2301@nyu.edu>",
+        "Size": {
+            "X": 74.91,
+            "Y": 74.6
+        }
+    }
+}
