@@ -28,11 +28,11 @@ void setup_feedback() {
   digitalWrite(start_calibration_LED, LOW);
   digitalWrite(end_calibration_LED, HIGH);
 
-  tone(buzzer_pin, 450);
-  delay(500);
+  tone(buzzer_pin, 1050);
+  delay(300);
   noTone(buzzer_pin);
   delay(250);
-  tone(buzzer_pin, 450);
-  delay(500);
+  tone(buzzer_pin, 1050);
+  delay(300);
   noTone(buzzer_pin);
 }
