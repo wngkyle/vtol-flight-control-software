@@ -17,7 +17,7 @@
   - [IMXRT1060 Manual, Rev 3](https://www.pjrc.com/teensy/IMXRT1060RM_rev3.pdf), [IMXRT1060 Manual, Rev 2](https://www.pjrc.com/teensy/IMXRT1060RM_rev2.pdf), [IMXRT1060 Datasheet](https://www.pjrc.com/teensy/IMXRT1060CEC_rev0_1.pdf), [W25Q64JV-DTR Datasheet](https://www.pjrc.com/teensy/winbond_w25q64jvxgim.pdf)
 - [GY-521 MPU6050 IMU]
   - [MPU-6050 Product Specification](https://product.tdk.com/system/files/dam/doc/product/sensor/mortion-inertial/imu/data_sheet/mpu-6000-datasheet1.pdf)
-  - [MPU-6050 Register Map](#https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf)
+  - [MPU-6050 Register Map](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf)
 
 
 ### Software Requirements
