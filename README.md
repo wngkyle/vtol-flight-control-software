@@ -4,7 +4,7 @@
 - [Overview](#overview)
 - [Hardware Requirements](#hardware-requirements)
 - [Software Requirements](#software-requirements)
-- [Mission & Goals](#mission-&-goals)
+- [Mission and Goals](#mission-and-goals)
 - [Software Design](#software-design)
 - [Hardware Design](#hardware-design)
 
@@ -23,7 +23,7 @@
 ### Software Requirements
 
 
-### Mission & Goals
+### Mission and Goals
 
 
 ### Software Design
