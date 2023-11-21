@@ -5,8 +5,8 @@
 - [Hardware Requirements](#hardware-requirements)
 - [Software Requirements](#software-requirements)
 - [Mission & Goals](#mission-&-goals)
-- [Software Design](#software-degisn)
-- [Hardware Design](#hardware-desgin)
+- [Software Design](#software-design)
+- [Hardware Design](#hardware-design)
 
 ### Overview
 
