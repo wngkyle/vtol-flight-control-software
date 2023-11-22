@@ -29,3 +29,8 @@
 ### Software Design
 
 ### Hardware Design
+- Aircraft Concept Overview
+  - This project adopts a direct-lift VTOL aircraft configuration using pre-built EDFs. Unlike quadcopter-like setups, it aligns closely with fixed-wing aircraft principles. All engines are utilized for every flight phase, eliminating redundant weight. The initial design features a tri-engine setup functioning as a tricopter for VTOL, transitioning to propel the aircraft forward for level flight after reaching a safe altitude. Development is ongoing for the control mechanism facilitating this transition.
+- Sizing and Design Parameters
+  - The focus on urban air mobility necessitates a compact size. The aircraft's size constraint matches that of a standard parking space, ensuring a balance between adaptability and performance. Proposed solutions in the preliminary design phase involve folding wings and a streamlined fuselage to accommodate a single passenger, enabling the aircraft to fit into a parking space in both its landed and VTOL configurations.
+  - The initial aircraft design incorporates a tapered wing with a low aspect ratio. Based on current estimates of wing geometry and gross weight, the projected aircraft, when carrying a passenger/pilot of up to 100 [kg], is anticipated to maintain level flight at 87 [kph]. For the scaled-down engineering sample that is to be built for this project, this value stands at 30 [kph]. It's important to note that the lift coefficient is currently underestimated, and the lift contribution from the fuselage and tail is disregarded in this calculation. Consequently, these velocity estimations are deemed conservative due to these factors not being fully accounted for.
