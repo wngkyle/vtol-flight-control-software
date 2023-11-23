@@ -135,6 +135,9 @@ class MPU_6050 final {
         bool begin(uint8_t i2c_address = MPU_6050_DEFAULT_ADDR, TwoWire *wire = &Wire, int32_t sensorID = 0);
         bool enableSleep(bool enable);
         void reset(void);
+        bool getTempEvent(sensors_event_t *temp);
+        bool getAcceEvent(sensors_event_t *acce);
+        bool getGyroEvent(sensors_event_t *gyro);
 
         // Friend classes
         friend class MPU_6050_temp;

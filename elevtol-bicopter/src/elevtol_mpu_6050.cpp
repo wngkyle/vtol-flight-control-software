@@ -429,3 +429,18 @@ Adafruit_Sensor *MPU_6050::getAccelerometerSensor(void) {
 Adafruit_Sensor *MPU_6050::getGyroscopeSensor(void) {
     return gyro_sensor;
 }
+
+bool MPU_6050::getTempEvent(sensors_event_t *temp) {
+    temp_sensor->getEvent(temp);
+    return true;
+}
+
+bool MPU_6050::getAcceEvent(sensors_event_t *acce) {
+    acce_sensor->getEvent(acce);
+    return true;
+}
+
+bool MPU_6050::getGyroEvent(sensors_event_t *gyro) {
+    gyro_sensor->getEvent(gyro);
+    return true;
+}
