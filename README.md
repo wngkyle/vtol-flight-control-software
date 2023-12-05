@@ -14,7 +14,7 @@
 
 ### Mission & Goal
 
-#### - Our mission is to make air travel accessible, seamless, and sustainable.
+ - ####Our mission is to make air travel accessible, seamless, and sustainable.
 
 ### Hardware Requirements
 - [Teensy 4.1](https://www.pjrc.com/store/teensy41.html)
