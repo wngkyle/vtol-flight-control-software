@@ -2,23 +2,30 @@
 #include <Servo.h>
 #include <elevtol_mpu_6050.h>
 
-Servo right_motor;
-Servo left_motor;
-MPU_6050 mpu;
-
 #define gyro_scale_factor 131
 #define acce_scale_factor 16384
 
-float p_gain = 0;
-float i_gain = 0;
-float d_gain = 0;
-float p_term, i_term, d_term;
+typedef struct {
+    float p_gain;
+    float i_gain;
+    float d_gain;
+    float p_term;
+    float i_term;
+    float d_term;
+    float pid_total;
+} pid_obj;
+
 float rate_roll, rate_pitch, rate_yaw;
-float pid, pwd_left, pwm_right;
+float pwd_left, pwm_right;
 float time, prev_time, elapsed_time, error, prev_error;
 uint16_t raw_gyroX, raw_gyroY, raw_gyroZ;
 uint16_t raw_acceX, raw_acceY, raw_acceZ;
 sensors_event_t a, g;
+
+Servo right_motor;
+Servo left_motor;
+MPU_6050 mpu;
+pid_obj pid;
 
 float calculate_p_term();
 float calculate_i_term();
@@ -36,7 +43,7 @@ void setup() {
         }
     }
     Serial.println("MPU_6050 Connected...");
-    mpu.setAccelerometerRange(MPU_6050_ACCE_RANGE_8_G);
+    mpu.setAccelerometerRange(MPU_6050_ACCE_RANGE_2_G);
     mpu.setGyroscopeRange(MPU_6050_GYRO_RANGE_500_DEG);
     mpu.setDLPFBandWidth(MPU_6050_BANDWIDTH_10_HZ);
     delay(100);
