@@ -12,8 +12,10 @@ PID_Control::PID_Control() {
     _terms->d_term = 0;
 
     _desired_value = 0;
+    _curr_error = 0;
     _prev_error = 0;
     _prev_time = 0;
+    _time_elapsed = 0;
 }
 
 PID_Control::PID_Control(gain_constants* gains, float desired_value) {
@@ -28,6 +30,10 @@ PID_Control::PID_Control(gain_constants* gains, float desired_value) {
     _terms->d_term = 0;
 
     _desired_value = desired_value;
+    _curr_error = 0;
+    _prev_error = 0;
+    _prev_time = 0;
+    _time_elapsed = 0;
 }
 
 PID_Control::~PID_Control() {
@@ -39,8 +45,24 @@ PID_Control::~PID_Control() {
     }
 }
 
-float PID_Control::calculate_PID() {
-    return 0.01;
+double PID_Control::calculate_PID(double time, double measurement) {
+    _time_elapsed = time - _prev_time;
+
+    // P Term
+    _curr_error = _desired_value - measurement;
+    _terms->p_term = _gains->p_gain * _curr_error;
+
+    // I Term
+    double curr_error_sum = (_prev_error + _curr_error) * _time_elapsed / 2;
+    curr_error_sum *= _gains->i_gain;
+    _terms->i_term += curr_error_sum;
+
+    // D Term
+    double error_diff = _curr_error - _prev_error;
+    _terms->d_term = _gains->d_gain * error_diff;
+
+    _prev_time = time;
+    _prev_error = _curr_error;
 }
 
 void PID_Control::setDesiredValue(float desired_value) {
@@ -75,3 +97,14 @@ float PID_Control::getDGain() {
     return _gains->d_gain;
 }
 
+double PID_Control::getPTerm() {
+    return _terms->p_term;
+}
+
+double PID_Control::getITerm() {
+    return _terms->i_term;
+}
+
+double PID_Control::getDTerm() {
+    return _terms->d_term;
+}
