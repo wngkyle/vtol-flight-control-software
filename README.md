@@ -10,11 +10,11 @@
 
 ### Overview
 
- - The aspiration for urban airborne transportation has captivated minds for decades, envisaging a realm of flying cars and personal aerial vehicles. Recent focus on eVTOL (electric vertical take-off and landing) aircraft signifies an unprecedented spotlight on the future of urban air mobility. Despite considerable strides within the industry, the complexity of this pursuit has thwarted the emergence of a truly revolutionary product. Present eVTOL vehicles, constrained by current technological limitations, exhibit significant drawbacks and lack the compelling incentives necessary for widespread adoption. This project endeavors to not only learn from the successful strategies of eVTOL pioneers but also to innovate and prototype our aircraft, striving to overcome existing limitations and pioneer a transformative solution.
+- The aspiration for urban airborne transportation has captivated minds for decades, envisaging a realm of flying cars and personal aerial vehicles. Recent focus on eVTOL (electric vertical take-off and landing) aircraft signifies an unprecedented spotlight on the future of urban air mobility. Despite considerable strides within the industry, the complexity of this pursuit has thwarted the emergence of a truly revolutionary product. Present eVTOL vehicles, constrained by current technological limitations, exhibit significant drawbacks and lack the compelling incentives necessary for widespread adoption. This project endeavors to not only learn from the successful strategies of eVTOL pioneers but also to innovate and prototype our aircraft, striving to overcome existing limitations and pioneer a transformative solution.
 
 ### Mission & Goal
 
- - ####Our mission is to make air travel accessible, seamless, and sustainable.
+- Our mission is to make air travel accessible, seamless, and sustainable.
 
 ### Hardware Requirements
 - [Teensy 4.1](https://www.pjrc.com/store/teensy41.html)
