@@ -5,7 +5,6 @@
 - [Mission & Goal](#mission-&-goal)
 - [Hardware Requirements](#hardware-requirements)
 - [Software Requirements](#software-requirements)
-- [Mission and Goals](#mission-and-goals)
 - [Software Design](#software-design)
 - [Hardware Design](#hardware-design)
 
@@ -27,9 +26,6 @@
 
 
 ### Software Requirements
-
-
-### Mission and Goals
 
 
 ### Software Design
