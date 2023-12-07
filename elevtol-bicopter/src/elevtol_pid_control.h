@@ -8,9 +8,9 @@ typedef struct {
 } gain_constants;
 
 typedef struct {
-    double p_term;
-    double i_term;
-    double d_term;
+    float p_term;
+    float i_term;
+    float d_term;
 } pid_terms;
 
 class PID_Control {
@@ -18,7 +18,7 @@ class PID_Control {
         PID_Control();
         PID_Control(gain_constants* gains, float desired_value);
         ~PID_Control();
-        double calculate_PID(double curr_time, double curr_value);
+        float calculate_PID(float curr_value);
 
         void setDesiredValue(float desired_value);
         float getDesiredValue();
@@ -30,15 +30,20 @@ class PID_Control {
         void setDGain(float new_d_gain);
         float getDGain();
         
-        double getPTerm();
-        double getITerm();
-        double getDTerm();
+        void setPTerm(float new_p_term);
+        float getPTerm();
+        void setITerm(float new_i_term);
+        float getITerm();
+        void setDTerm(float new_d_term);
+        float getDTerm();
+
+        float curr_error;
+        float prev_error;
+        float curr_time;
+        float prev_time;
+        float time_elapsed;
     private:
         float _desired_value;
-        double _curr_error;
-        double _prev_error;
-        double _prev_time;
-        double _time_elapsed;
         gain_constants* _gains;
         pid_terms* _terms;
 };
