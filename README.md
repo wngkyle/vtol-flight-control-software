@@ -29,9 +29,10 @@
 
 
 ### Software Requirements
-
+- IN_PROGRESS
 
 ### Software Design
+- IN_PROGRESS
 
 ### Hardware Design
 - Aircraft Concept Overview
