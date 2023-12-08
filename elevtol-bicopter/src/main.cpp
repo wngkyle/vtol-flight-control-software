@@ -7,7 +7,8 @@
 #define acce_scale_factor 16384
 #define gravitational_constant 9.80665
 #define rad_to_deg 57.2957795131
-#define alpha 0.35
+#define calibration_loop 1000
+#define alpha 0.30
 // Pairs:
 // @ delay = 100ms, alpha = 0.35
 // @ delay = 0ms, alpha = 0.75, none
@@ -46,9 +47,9 @@ float curr_error_sum;
 float prev_error;
 float _desired_value = 0;
 float measurement;
-float p_gain = 6.5;
-float i_gain = 0;
-float d_gain = 1.3;
+float p_gain = 2.5; // 5.5
+float i_gain = 0; // 0.01
+float d_gain = 1.5; // 1.3
 float p_term, i_term, d_term;
 float total;
 
@@ -114,7 +115,7 @@ void loop() {
     complementary_filter();
 
     // P Term
-    curr_error = _desired_value - filtered_angle[1];
+    curr_error = _desired_value - acce_angle[1];
     p_term = p_gain * curr_error;
 
     // I Term
@@ -131,6 +132,7 @@ void loop() {
     prev_error = curr_error;
 
     total = p_term + i_term + d_term;
+    total *= 17;
 
     if (total < -1000) {
         total = -1000;
@@ -139,8 +141,8 @@ void loop() {
         total = 1000;
     }
 
-    pwm_right = 1080 - total;
-    pwm_left = 1050 + total;
+    pwm_right = 1100 - total;
+    pwm_left = 1100 + total;
 
     Serial.println(total);
 
@@ -217,7 +219,7 @@ void complementary_filter() {
 
 void gyroscope_calibration() {
     // Gyroscope calibration
-    for(int i = 0; i < 2000; i++) {
+    for(int i = 0; i < calibration_loop; i++) {
         mpu.getGyroEvent(&g);
         rate_roll += g.gyro.x;
         rate_pitch += g.gyro.y;
@@ -233,7 +235,7 @@ void gyroscope_calibration() {
 
 void accelerometer_calibration() {
     // Accelerometer calibration
-    for(int i = 0; i < 2000; i++) {
+    for(int i = 0; i < calibration_loop; i++) {
         mpu.getAcceEvent(&a);
         rate_acceX += a.acceleration.x;
         rate_acceY += a.acceleration.y;
