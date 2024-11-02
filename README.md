@@ -29,10 +29,30 @@
 
 
 ### Software Requirements
-- IN_PROGRESS
+- Flight Control System (FCS)
+  - Stabilization Algorithms: Implement PID control loops to maintain stability and orientation in all flight modes (VTOL, hover, forward flight)
+  - Attitude Control: Utilize the MPU6050 IMU data to calculate roll, pitch, and yaw, and adjust thrust output accordingly
+  - Transitional Control: Develop control algorithms to manage the smooth transition from VTOL to forward flight, especially managing EDF thrust and tilt mechanisms
+  - Failsafe Mechanism: Ensure redundancy in control commands and emergency protocols in case of sensor failure or power loss
+- Sensor Data Acquisition and Processing
+  - IMU Data Handling: Continuously collect data from IMU for real-time motion analysis
+  - Data Filtering: Use complementary filters (e.g., Kalman or low-pass) to filter out noise in IMU data, improving stability
+  - Altitude Control: Integrate optional altitude sensors (e.g., barometer) for accurate height monitoring during takeoff, hover, and landing phases
+- Communication and Telemetry
+  - Data Transmission: Enable data transmission through serial, USB, or wireless protocols (e.g., CAN, I2C, or SPI) to communicate flight metrics
+  - Diagnostic Alerts: Implement real-time alert systems for low battery, high temperatures, or abnormal sensor readings
+- Power Management
+  - Battery Status Monitoring: Continuously track battery health and power consumption, optimizing for flight duration and alerting when power is low
 
 ### Software Design
-- IN_PROGRESS
+- Architecture Overview
+  - The system follows a modular design with a separation between flight control, sensor data processing, and communication module
+  - Core flight control will be managed on the Teensy 4.1, which is responsible for real-time calculations and actuation commands
+  - Modules
+    - Flight control module
+    - Data aquisition module
+    - Power management module
+    - Communication module
 
 ### Hardware Design
 - Aircraft Concept Overview
